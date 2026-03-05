@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Details</title>
+  <link rel="stylesheet" href="doctor_style.css">
+</head>
+<body>
+
+<div class="container">
+  <div id="doctor-container"></div>
+  <a href="index.html" class="back-button">Back to search</a>
+</div>
+
+<script>
+  // Data for all doctors
+  const doctors = {
+    ahmed: {
+      name: "Dr. Ahmed Hassan",
+      specialty: "Cardiologist",
+      image: "images/doc1.jpg",
+      about: "Dr. Ahmed Hassan has over 15 years of experience in cardiology. He specializes in heart disease management, preventive cardiology, and advanced diagnostic procedures.",
+      email: "ahmed.hassan@example.com",
+      phone: "+212 6 00 00 00 00",
+      address: "123 Main Street, Casablanca, Morocco"
+    },
+    sarah: {
+      name: "Dr. Sarah Ali",
+      specialty: "Dentist",
+      image: "images/doc2.jpg",
+      about: "Dr. Sarah Ali is a skilled dentist with 10 years of experience in preventive and cosmetic dentistry.",
+      email: "sarah.ali@example.com",
+      phone: "+212 6 11 11 11 11",
+      address: "456 Dental Clinic, Rabat, Morocco"
+    },
+    youssef: {
+      name: "Dr. Youssef Karim",
+      specialty: "Dermatologist",
+      image: "images/doc3.jpg",
+      about: "Dr. Youssef Karim specializes in skin care and dermatology, with expertise in acne, eczema, and cosmetic procedures.",
+      email: "youssef.karim@example.com",
+      phone: "+212 6 22 22 22 22",
+      address: "789 Skin Care Clinic, Marrakech, Morocco"
+    }
+  };
+
+  // Get doctor ID from URL
+  const params = new URLSearchParams(window.location.search);
+  const doctorId = params.get('id');
+
+  const container = document.getElementById('doctor-container');
+
+  if (doctorId && doctors[doctorId]) {
+    const doc = doctors[doctorId];
+    container.innerHTML = `
+      <h1>${doc.name}</h1>
+      <p class="doctor-specialty">${doc.specialty}</p>
+      <div class="doctor-image">
+        <img src="${doc.image}" alt="${doc.name}">
+      </div>
+      <div class="doctor-details">
+        <h2>About ${doc.name}</h2>
+        <p>${doc.about}</p>
+        <h3>Contact</h3>
+        <p>Email: ${doc.email}</p>
+        <p>Phone: ${doc.phone}</p>
+        <p>Clinic Address: ${doc.address}</p>
+      </div>
+    `;
+  } else {
+    container.innerHTML = "<p>Doctor not found.</p>";
+  }
+</script>
+
+</body>
+</html>

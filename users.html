@@ -1,54 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Doctors</title>
-
-<link rel="stylesheet" href="users_style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Doctors</title>
+  <link rel="stylesheet" href="users_style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Find a Doctor</h1>
+  <h1>Find a Doctor</h1>
 
-<div class="search-bar">
-<input type="text" placeholder="Search doctor name">
-<input type="text" placeholder="Specialty">
-<button>Search</button>
+  <div class="search-bar">
+    <input type="text" id="nameSearch" placeholder="Search doctor name">
+    <input type="text" id="specialtySearch" placeholder="Specialty">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <!-- Doctors section styled like projects -->
+  <section class="doctors-section">
+    <div class="content">
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/doc1.jpg" alt="Dr. Ahmed Hassan">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Cardiologist</p>
+          <strong class="project-title">
+    <span>Dr. Ahmed Hassan</span>
+    <a href="doctor.html?id=ahmed" class="more-details">More details</a>
+</strong>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/doc2.jpg" alt="Dr. Sarah Ali">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Dentist</p>
+          <strong class="project-title">
+    <span>Dr. Sarah Ali</span>
+    <a href="doctor.html?id=sarah" class="more-details">More details</a>
+</strong>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/doc3.jpg" alt="Dr. Youssef Karim">
+        </div>
+        <div class="project-info">
+          <p class="project-category">Dermatologist</p>
+          <strong class="project-title">
+    <span>Dr. Youssef Karim</span>
+    <a href="doctor.html?id=youssef" class="more-details">More details</a>
+</strong>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="join">
+    <p>Are you a doctor?</p>
+    <button>Join the platform</button>
+  </div>
+
 </div>
 
-<div class="doctors">
-
-<div class="card">
-<img src="images/doc1.jpg">
-<h3>Dr. Ahmed Hassan</h3>
-<p>Cardiologist</p>
-</div>
-
-<div class="card">
-<img src="images/doc2.jpg">
-<h3>Dr. Sarah Ali</h3>
-<p>Dentist</p>
-</div>
-
-<div class="card">
-<img src="images/doc3.jpg">
-<h3>Dr. Youssef Karim</h3>
-<p>Dermatologist</p>
-</div>
-
-</div>
-
-<div class="join">
-<p>Are you a doctor?</p>
-<button>Join the platform</button>
-</div>
-
-</div>
+<!-- Link to your external JS file -->
+<script src="doc_search.js"></script>
 
 </body>
 </html>
